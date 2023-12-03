@@ -1,5 +1,5 @@
 from flask import Flask
-from blueprints import cats
+from blueprints import cats, users, images
 from extentions import db
 from db.db_config import dialect, user_name, password, host, database, port
 from flask_cors import CORS
@@ -14,6 +14,8 @@ app.config["SQLALCHEMY_DATABASE_URI"] = db_url
 db.init_app(app)
 
 app.register_blueprint(cats.cats, url_prefix='/api/cats')
+app.register_blueprint(users.users, url_prefix='/api/users')
+app.register_blueprint(images.images, url_prefix='/api/images')
 
 # Init the DB
 with app.app_context():
