@@ -6,9 +6,10 @@ from extentions import db
 users = Blueprint('users', __name__)
 
 
-@users.get('/<int:openId>')
-def get_user() -> Response:
-    return Users.query.get(request.args['openId'])
+@users.get('/<openId>')
+def get_user(openId) -> Response:
+    user: Users = Users.query.get(openId)
+    return user.toDict()
 
 
 @users.post('/')
