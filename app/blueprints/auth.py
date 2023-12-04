@@ -25,4 +25,4 @@ def get_jscode() -> Response:
 @auth.get('/imageUploadToken')
 def get_upload_token() -> Response:
     token = q.upload_token(BUCKET)
-    return dict(uptoekn=token)
+    return dict(uptoken=token)
