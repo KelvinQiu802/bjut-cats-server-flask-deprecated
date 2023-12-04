@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify, Response
 from extentions import db
-from config.wx_config import APP_ID, SECRET
-from config.qiniu_config import BUCKET, ACCESS_KEY, SECRET_KEY
+from config.config import APP_ID, SECRET
+from config.config import BUCKET, ACCESS_KEY, SECRET_KEY
 import requests
 import qiniu
 

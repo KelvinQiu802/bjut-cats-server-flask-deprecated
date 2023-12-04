@@ -1,7 +1,7 @@
 from flask import Flask
 from blueprints import cats, users, images, articles, auth
 from extentions import db
-from config.db_config import dialect, user_name, password, host, database, port
+from config.config import DIALECT, USER_NAME, PASSWORD, HOST, DATABASE, PORT
 from flask_cors import CORS
 
 
@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 CORS(app)
 
-db_url = f'{dialect}://{user_name}:{password}@{host}:{port}/{database}'
+db_url = f'{DIALECT}://{USER_NAME}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}'
 app.config["SQLALCHEMY_DATABASE_URI"] = db_url
 db.init_app(app)
 
