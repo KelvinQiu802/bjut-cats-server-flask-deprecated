@@ -7,7 +7,7 @@ class Images(db.Model):
     openId: Mapped[str] = mapped_column(
         String(255), ForeignKey('users.openId',
                                 ondelete='cascade', onupdate='cascade'),
-        nullable=False, primary_key=True)
+        nullable=False)
     imageUrl: Mapped[str] = mapped_column(
         String(255), nullable=False, primary_key=True)
     state: Mapped[str] = mapped_column(
