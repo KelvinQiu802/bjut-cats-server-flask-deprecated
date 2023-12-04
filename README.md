@@ -2,6 +2,15 @@
 
 ## Getting Started
 
+### Using Shell Script
+
+```shell
+$ chmod +x start.sh
+$ ./start.sh
+```
+
+### Manually
+
 ```shell
 $ python3 -m venv .venv
 > .venv\Scripts\activate (for Windows)

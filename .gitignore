@@ -203,3 +203,5 @@ db_config.py
 wx_config.py
 qiniu_config.py
 config.py
+
+nohup.out
