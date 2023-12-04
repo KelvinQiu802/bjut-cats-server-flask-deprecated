@@ -9,7 +9,10 @@ users = Blueprint('users', __name__)
 @users.get('/<openId>')
 def get_user(openId) -> Response:
     user: Users = Users.query.get(openId)
-    return user.toDict()
+    if (user != None):
+        return user.toDict()
+    else:
+        return Response(status=404, response='User Not Found')
 
 
 @users.post('/')
