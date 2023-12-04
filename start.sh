@@ -29,5 +29,3 @@ pip install -r requirements.txt
 
 # run app.py
 nohup python3 app/app.py &
-
-done
