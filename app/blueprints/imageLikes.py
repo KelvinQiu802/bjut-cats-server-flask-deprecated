@@ -14,7 +14,8 @@ def get_all() -> Response:
 
 @imageLikes.post('/')
 def add() -> Response:
-    new_like = ImageLikes(**request.json)
+    new_like = ImageLikes(
+        openId=request.json['openId'], imageUrl=request.json['imageUrl'], time=None)
     db.session.add(new_like)
     db.session.commit()
     return Response(status=204, response='New Like Added')
