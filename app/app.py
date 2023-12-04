@@ -1,7 +1,7 @@
 from flask import Flask
-from blueprints import cats, users, images, articles
+from blueprints import cats, users, images, articles, auth
 from extentions import db
-from db.db_config import dialect, user_name, password, host, database, port
+from config.db_config import dialect, user_name, password, host, database, port
 from flask_cors import CORS
 
 
@@ -17,6 +17,7 @@ app.register_blueprint(cats.cats, url_prefix='/api/cats')
 app.register_blueprint(users.users, url_prefix='/api/users')
 app.register_blueprint(images.images, url_prefix='/api/images')
 app.register_blueprint(articles.articles, url_prefix='/api/articles')
+app.register_blueprint(auth.auth, url_prefix='/api')
 
 # Init the DB
 with app.app_context():
